@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>function rollnumber(num, delay, nextroll) {
+    setTimeout(() => {
+      console.log("Roll number is ", num);
+      if (nextroll) nextroll();
+    }, delay);
+  }
+  rollnumber(12121, 1000, () => {
+    rollnumber(12312, 2000, () => {
+      rollnumber(12412, 3000, () => {
+        rollnumber(12512, 4000);
+      });
+    });
+  });
+</body>
+</html>
